@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutResultadoRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_nature_gradient"
+    android:padding="20dp"
+    tools:context=".ResultadoActivity">
+
+    <!-- Animación Lottie de celebración o icono Trofeo -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieCelebration"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:lottie_fileName="celebration.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Título superior -->
+    <TextView
+        android:id="@+id/tvResultadoHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado_titulo"
+        android:textColor="@color/accent_light"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/lottieCelebration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TARJETA CON EL DESGLOSE DE PUNTUACIÓN -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/parchment_bg"
+        app:layout_constraintTop_toBottomOf="@id/tvResultadoHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PUNTUACIÓN OBTENIDA"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp"
+                android:letterSpacing="0.08"
+                android:textStyle="bold" />
+
+            <!-- Puntuación destacada -->
+            <TextView
+                android:id="@+id/tvPuntuacionFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/primary_dark"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:text="+15 pts" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#D7CCC8" />
+
+            <!-- Aciertos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_check"
+                    android:contentDescription="Acierto" />
+
+                <TextView
+                    android:id="@+id/tvResumenAciertos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/text_body"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="Aciertos: 5 / 5 (+15 pts)" />
+            </LinearLayout>
+
+            <!-- Fallos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_cross"
+                    android:contentDescription="Fallo" />
+
+                <TextView
+                    android:id="@+id/tvResumenFallos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/text_body"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="Fallos: 0 / 5 (-0 pts)" />
+            </LinearLayout>
+
+            <!-- Veredicto / Mensaje personalizado -->
+            <TextView
+                android:id="@+id/tvMensajeVeredicto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_option_selected"
+                android:padding="12dp"
+                android:gravity="center"
+                android:textColor="@color/primary_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="¡Excelente! ¡Eres todo un experto en fauna salvaje!" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- BOTONES DE ACCIÓN INFERIORES -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cardResultado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Botón Comenzar nueva tanda del juego -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnJugarDeNuevo"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/btn_jugar_de_nuevo"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/accent"
+            app:icon="@drawable/ic_refresh"
+            app:iconGravity="textStart"
+            app:iconTint="@color/white"
+            app:cornerRadius="14dp" />
+
+        <!-- Botón Salir -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSalir"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/btn_salir"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            app:strokeColor="@color/white"
+            app:cornerRadius="14dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_nature_gradient"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- BARRA SUPERIOR: Contador y Puntuación -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvQuestionProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_badge_progress"
+            android:paddingStart="14dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="6dp"
+            android:text="@string/pregunta_counter_format"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            tools:text="Pregunta 1 / 5" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_badge_score"
+            android:paddingStart="14dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="6dp"
+            android:text="@string/puntos_format"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="Puntos: 0" />
+    </LinearLayout>
+
+    <!-- TARJETA CENTRAL TIPO PERGAMINO -->
+    <ScrollView
+        android:id="@+id/scrollViewContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/cardContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_parchment_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Enunciado de la pregunta -->
+            <TextView
+                android:id="@+id/tvQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="Pregunta 1" />
+
+            <TextView
+                android:id="@+id/tvQuestionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/text_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="4dp"
+                tools:text="¿Cuál de los siguientes animales es un marsupial?" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="#D7CCC8" />
+
+            <!-- PREGUNTA 1: RadioGroup + RadioButtons (Texto) -->
+            <LinearLayout
+                android:id="@+id/layoutQuestion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQ1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rbQ1OptionA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_option_card"
+                        android:padding="12dp"
+                        android:text="@string/p1_opcion_a"
+                        android:textColor="@color/text_body"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQ1OptionB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_option_card"
+                        android:padding="12dp"
+                        android:text="@string/p1_opcion_b"
+                        android:textColor="@color/text_body"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQ1OptionC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_option_card"
+                        android:padding="12dp"
+                        android:text="@string/p1_opcion_c"
+                        android:textColor="@color/text_body"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQ1OptionD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_option_card"
+                        android:padding="12dp"
+                        android:text="@string/p1_opcion_d"
+                        android:textColor="@color/text_body"
+                        android:textSize="16sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- PREGUNTA 2: Imagen + Opciones de texto (RadioGroup) -->
+            <LinearLayout
+                android:id="@+id/layoutQuestion2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ivQuestion2Image"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginBottom="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_guepardo"
+                    android:contentDescription="Imagen animal veloz" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQ2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rbQ2OptionA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_option_card"
+                        android:padding="12dp"
+                        android:text="@string/p2_opcion_a"
+                        android:textColor="@color/text_body"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQ2OptionB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_option_card"
+                        android:padding="12dp"
+                        android:text="@string/p2_opcion_b"
+                        android:textColor="@color/text_body"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQ2OptionC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_option_card"
+                        android:padding="12dp"
+                        android:text="@string/p2_opcion_c"
+                        android:textColor="@color/text_body"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQ2OptionD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_option_card"
+                        android:padding="12dp"
+                        android:text="@string/p2_opcion_d"
+                        android:textColor="@color/text_body"
+                        android:textSize="16sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- PREGUNTA 3: ListView con Opciones -->
+            <LinearLayout
+                android:id="@+id/layoutQuestion3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/text_muted"
+                    android:textSize="13sp"
+                    android:text="Selecciona una opción de la lista:" />
+
+                <ListView
+                    android:id="@+id/listViewQ3"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:divider="@null"
+                    android:dividerHeight="6dp" />
+            </LinearLayout>
+
+            <!-- PREGUNTA 4: Spinner con Opciones -->
+            <LinearLayout
+                android:id="@+id/layoutQuestion4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/text_muted"
+                    android:textSize="13sp"
+                    android:text="Despliega el menú para seleccionar la respuesta:" />
+
+                <Spinner
+                    android:id="@+id/spinnerQ4"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/bg_option_card"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Vista previa de la opción seleccionada -->
+                <TextView
+                    android:id="@+id/tvSelectedSpinnerOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_option_selected"
+                    android:padding="12dp"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="Seleccionado: Ballena azul" />
+            </LinearLayout>
+
+            <!-- PREGUNTA 5: Opciones de respuestas que muestran IMÁGENES (Sobresaliente) -->
+            <LinearLayout
+                android:id="@+id/layoutQuestion5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/text_muted"
+                    android:textSize="13sp"
+                    android:text="Toca la imagen del animal correcto:" />
+
+                <!-- Cuadrícula 2x2 de opciones con imágenes -->
+                <GridLayout
+                    android:id="@+id/gridImagesQ5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="2"
+                    android:alignmentMode="alignMargins"
+                    android:useDefaultMargins="true">
+
+                    <!-- Opción 1: Pingüino -->
+                    <LinearLayout
+                        android:id="@+id/cardImgOption1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_option_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageButton
+                            android:id="@+id/ibQ5Option1"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:background="@null"
+                            android:src="@drawable/img_pinguino"
+                            android:scaleType="fitCenter"
+                            android:contentDescription="@string/p5_opcion_a" />
+
+                        <TextView
+                            android:id="@+id/tvImgOption1Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/p5_opcion_a"
+                            android:textColor="@color/text_body"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Opción 2: Águila -->
+                    <LinearLayout
+                        android:id="@+id/cardImgOption2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_option_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageButton
+                            android:id="@+id/ibQ5Option2"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:background="@null"
+                            android:src="@drawable/img_aguila"
+                            android:scaleType="fitCenter"
+                            android:contentDescription="@string/p5_opcion_b" />
+
+                        <TextView
+                            android:id="@+id/tvImgOption2Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/p5_opcion_b"
+                            android:textColor="@color/text_body"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Opción 3: Loro -->
+                    <LinearLayout
+                        android:id="@+id/cardImgOption3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_option_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageButton
+                            android:id="@+id/ibQ5Option3"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:background="@null"
+                            android:src="@drawable/img_loro"
+                            android:scaleType="fitCenter"
+                            android:contentDescription="@string/p5_opcion_c" />
+
+                        <TextView
+                            android:id="@+id/tvImgOption3Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/p5_opcion_c"
+                            android:textColor="@color/text_body"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Opción 4: Colibrí -->
+                    <LinearLayout
+                        android:id="@+id/cardImgOption4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_option_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageButton
+                            android:id="@+id/ibQ5Option4"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:background="@null"
+                            android:src="@drawable/img_colibri"
+                            android:scaleType="fitCenter"
+                            android:contentDescription="@string/p5_opcion_d" />
+
+                        <TextView
+                            android:id="@+id/tvImgOption4Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/p5_opcion_d"
+                            android:textColor="@color/text_body"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </GridLayout>
+            </LinearLayout>
+
+            <!-- FEEDBACK EN TIEMPO REAL -->
+            <LinearLayout
+                android:id="@+id/layoutFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:background="@drawable/bg_option_selected"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ivFeedbackIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_check"
+                    android:contentDescription="Resultado" />
+
+                <TextView
+                    android:id="@+id/tvFeedbackMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark"
+                    tools:text="¡Respuesta correcta! (+3 puntos)" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BARRA INFERIOR DE ACCIONES -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Botón Reiniciar tanda -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:text="Reiniciar"
+            android:textColor="@color/white"
+            android:backgroundTint="#C62828"
+            app:icon="@drawable/ic_refresh"
+            app:iconTint="@color/white"
+            app:cornerRadius="12dp"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- Botón Acción: Comprobar / Siguiente -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAction"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:text="@string/btn_comprobar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/accent"
+            app:icon="@drawable/ic_arrow_forward"
+            app:iconGravity="end"
+            app:iconTint="@color/white"
+            app:cornerRadius="12dp"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

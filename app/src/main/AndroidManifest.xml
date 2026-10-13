@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ResultadoActivity"
+            android:exported="false"
+            android:label="@string/resultado_titulo"
+            android:theme="@style/Theme.Practica1" />
     </application>
 
 </manifest>

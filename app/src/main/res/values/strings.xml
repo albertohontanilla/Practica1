@@ -1,3 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Practica1</string>
+    <string name="app_name">Quiz del Reino Animal</string>
+    <string name="title_quiz">Animal Quiz</string>
+    
+    <!-- Marcadores -->
+    <string name="puntos_format">Puntos: %1$d</string>
+    <string name="pregunta_counter_format">Pregunta %1$d / %2$d</string>
+    <string name="score_label">Puntuación: </string>
+    
+    <!-- Botones de navegación y acción -->
+    <string name="btn_siguiente">Siguiente</string>
+    <string name="btn_comprobar">Comprobar</string>
+    <string name="btn_reiniciar">Reiniciar Juego</string>
+    <string name="btn_jugar_de_nuevo">Jugar de nuevo</string>
+    <string name="btn_continuar">Continuar</string>
+    <string name="btn_empezar_nuevo">Empezar de nuevo</string>
+    <string name="btn_confirmar_seleccion">Confirmar respuesta</string>
+    <string name="btn_salir">Salir</string>
+
+    <!-- Pregunta 1 (Texto + RadioButtons) -->
+    <string name="p1_titulo">Pregunta 1</string>
+    <string name="p1_enunciado">¿Cuál de los siguientes animales es un marsupial?</string>
+    <string name="p1_opcion_a">Koala</string>
+    <string name="p1_opcion_b">Tigre</string>
+    <string name="p1_opcion_c">Lobo</string>
+    <string name="p1_opcion_d">Vaca</string>
+
+    <!-- Pregunta 2 (Imagen + Opciones de texto) -->
+    <string name="p2_titulo">Pregunta 2</string>
+    <string name="p2_enunciado">¿Cuál es el animal terrestre más rápido del mundo?</string>
+    <string name="p2_opcion_a">León</string>
+    <string name="p2_opcion_b">Guepardo</string>
+    <string name="p2_opcion_c">Gacela</string>
+    <string name="p2_opcion_d">Liebre</string>
+
+    <!-- Pregunta 3 (Texto + ListView) -->
+    <string name="p3_titulo">Pregunta 3</string>
+    <string name="p3_enunciado">¿Qué ave es conocida popularmente por su canto melodioso?</string>
+    <string name="p3_opcion_a">Cuervo</string>
+    <string name="p3_opcion_b">Gorrión</string>
+    <string name="p3_opcion_c">Ruiseñor</string>
+    <string name="p3_opcion_d">Tucán</string>
+
+    <!-- Pregunta 4 (Texto + Spinner) -->
+    <string name="p4_titulo">Pregunta 4</string>
+    <string name="p4_enunciado">¿Cuál es el mamífero más grande del planeta Tierra?</string>
+    <string name="p4_spinner_prompt">Selecciona una opción</string>
+    <string name="p4_opcion_a">Elefante africano</string>
+    <string name="p4_opcion_b">Ballena azul</string>
+    <string name="p4_opcion_c">Jirafa</string>
+    <string name="p4_opcion_d">Rinoceronte blanco</string>
+
+    <!-- Pregunta 5 (Texto + Opciones con imágenes) -->
+    <string name="p5_titulo">Pregunta 5</string>
+    <string name="p5_enunciado">¿Cuál de las siguientes aves no tiene la capacidad de volar?</string>
+    <string name="p5_opcion_a">Pingüino</string>
+    <string name="p5_opcion_b">Águila imperial</string>
+    <string name="p5_opcion_c">Guacamayo</string>
+    <string name="p5_opcion_d">Colibrí</string>
+
+    <!-- Mensajes de feedback -->
+    <string name="msg_acierto">¡Respuesta correcta! (+3 puntos)</string>
+    <string name="msg_fallo">¡Respuesta incorrecta! (-2 puntos)</string>
+    <string name="msg_debe_seleccionar">Por favor, selecciona una opción antes de continuar</string>
+    <string name="dialog_fallo_titulo">¡Has fallado!</string>
+    <string name="dialog_fallo_mensaje">Se te han restado 2 puntos (-2).\n\n¿Deseas continuar con la siguiente pregunta o empezar el juego desde el principio?</string>
+
+    <!-- Pantalla de resultados -->
+    <string name="resultado_titulo">¡Fin del Quiz!</string>
+    <string name="resultado_puntos_format">%1$d puntos</string>
+    <string name="resultado_aciertos_format">Aciertos: %1$d / %2$d (+%3$d pts)</string>
+    <string name="resultado_fallos_format">Fallos: %1$d / %2$d (-%3$d pts)</string>
+    <string name="resultado_excelente">¡Excelente! ¡Eres todo un experto en fauna salvaje!</string>
+    <string name="resultado_notable">¡Muy bien jugado! Tienes un gran conocimiento del reino animal.</string>
+    <string name="resultado_aprobado">¡Buen intento! Has superado el reto.</string>
+    <string name="resultado_suspenso">¡Ánimo! Puedes intentarlo de nuevo para mejorar tu récord.</string>
 </resources>
