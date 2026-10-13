@@ -24,7 +24,7 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     // Marcadores y contadores del juego
     private int puntos = 0;
@@ -183,28 +183,15 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapterP3 = new ArrayAdapter<>(this, R.layout.item_quiz_option, R.id.tvOptionText, opcionesP3);
         listViewQ3.setAdapter(adapterP3);
-
-        listViewQ3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (respondida) return;
-                seleccionActual = position;
-
-                // Marcar visualmente el elemento seleccionado en la lista
-                for (int i = 0; i < parent.getChildCount(); i++) {
-                    View item = parent.getChildAt(i);
-                    item.setBackgroundResource(R.drawable.bg_option_card);
-                }
-                view.setBackgroundResource(R.drawable.bg_option_selected);
-            }
-        });
+        listViewQ3.setOnItemClickListener(this);
 
         // Configuración de Spinner para P4
         ArrayList<String> opcionesP4 = new ArrayList<>();
-        opcionesP4.add(getString(R.string.p4_opcion_a)); // Elefante africano (0)
-        opcionesP4.add(getString(R.string.p4_opcion_b)); // Ballena azul (1)
-        opcionesP4.add(getString(R.string.p4_opcion_c)); // Jirafa (2)
-        opcionesP4.add(getString(R.string.p4_opcion_d)); // Rinoceronte blanco (3)
+        opcionesP4.add("-- Toca para desplegar y seleccionar --"); // Posición 0: Placeholder
+        opcionesP4.add(getString(R.string.p4_opcion_a)); // Elefante africano (Posición 1 -> Opción 0)
+        opcionesP4.add(getString(R.string.p4_opcion_b)); // Ballena azul (Posición 2 -> Opción 1 - Correcta)
+        opcionesP4.add(getString(R.string.p4_opcion_c)); // Jirafa (Posición 3 -> Opción 2)
+        opcionesP4.add(getString(R.string.p4_opcion_d)); // Rinoceronte blanco (Posición 4 -> Opción 3)
 
         ArrayAdapter<String> adapterP4 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, opcionesP4);
         spinnerQ4.setAdapter(adapterP4);
@@ -213,9 +200,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (respondida) return;
-                seleccionActual = position;
-                tvSelectedSpinnerOption.setVisibility(View.VISIBLE);
-                tvSelectedSpinnerOption.setText("Seleccionado: " + opcionesP4.get(position));
+                if (position == 0) {
+                    seleccionActual = -1;
+                    tvSelectedSpinnerOption.setVisibility(View.GONE);
+                } else {
+                    seleccionActual = position - 1;
+                    tvSelectedSpinnerOption.setVisibility(View.VISIBLE);
+                    tvSelectedSpinnerOption.setText("Seleccionado: " + opcionesP4.get(position));
+                }
             }
 
             @Override
@@ -250,6 +242,19 @@ public class MainActivity extends AppCompatActivity {
         ibQ5Option3.setOnClickListener(imgOptionListener);
         cardImgOption4.setOnClickListener(imgOptionListener);
         ibQ5Option4.setOnClickListener(imgOptionListener);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (respondida) return;
+        seleccionActual = position;
+
+        // Marcar visualmente el elemento seleccionado en la lista (Diapositiva ListView)
+        for (int i = 0; i < parent.getChildCount(); i++) {
+            View item = parent.getChildAt(i);
+            item.setBackgroundResource(R.drawable.bg_option_card);
+        }
+        view.setBackgroundResource(R.drawable.bg_option_selected);
     }
 
     private void seleccionarOpcionImagen(int opcion) {
@@ -310,9 +315,8 @@ public class MainActivity extends AppCompatActivity {
                 layoutQuestion4.setVisibility(View.VISIBLE);
                 spinnerQ4.setEnabled(true);
                 spinnerQ4.setSelection(0);
-                seleccionActual = 0; // Por defecto primer elemento del spinner
-                tvSelectedSpinnerOption.setVisibility(View.VISIBLE);
-                tvSelectedSpinnerOption.setText("Seleccionado: " + spinnerQ4.getSelectedItem().toString());
+                seleccionActual = -1; // Obliga a seleccionar una opción válida
+                tvSelectedSpinnerOption.setVisibility(View.GONE);
                 break;
 
             case 5:

@@ -5,7 +5,7 @@
     android:id="@+id/layoutResultadoRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_nature_gradient"
+    android:background="@drawable/bg_jungle_theme"
     android:padding="20dp"
     tools:context=".ResultadoActivity">
 

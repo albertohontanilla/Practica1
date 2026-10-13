@@ -63,12 +63,14 @@ La aplicación consta de **5 preguntas** con diferentes componentes visuales y c
 app/src/main/
 ├── AndroidManifest.xml              # Declaración de MainActivity y ResultadoActivity con temas
 ├── assets/
-│   └── celebration.json             # Animación vectorial Lottie para la pantalla final
+│   ├── celebration.json             # Animación vectorial Lottie para la pantalla final
+│   └── loading_animation.json       # Fichero Lottie (siguiendo Diapositivas Lottie)
 ├── java/com/example/practica1/
 │   ├── MainActivity.java            # Controlador del Quiz (lógica, 5 preguntas, puntuación, controles)
 │   └── ResultadoActivity.java       # Controlador de Resultados (recepción de extras, reinicio, veredicto)
 └── res/
     ├── drawable/
+    │   ├── bg_jungle_theme.xml      # Fondo vectorial de selva tropical con hojas decorativas (Figura 1)
     │   ├── bg_nature_gradient.xml   # Fondo degradado de estilo selva / naturaleza
     │   ├── bg_parchment_card.xml    # Contenedor estilo pergamino / tarjeta redondeada
     │   ├── bg_badge_score.xml       # Badge verde para puntuación
@@ -81,11 +83,11 @@ app/src/main/
     │   ├── ic_cross.xml             # Icono de fallo
     │   ├── ic_refresh.xml           # Icono de reinicio
     │   ├── ic_trophy.xml            # Icono de trofeo
-    │   ├── img_guepardo.xml         # Ilustración vectorial del animal veloz (P2)
-    │   ├── img_pinguino.xml         # Ilustración vectorial Pingüino (P5)
-    │   ├── img_aguila.xml           # Ilustración vectorial Águila (P5)
-    │   ├── img_loro.xml             # Ilustración vectorial Loro (P5)
-    │   ├── img_colibri.xml          # Ilustración vectorial Colibrí (P5)
+    │   ├── guepardo.png             # Imagen PNG del animal más rápido (P2, Diapos 5-9)
+    │   ├── pinguino.png             # Imagen PNG Pingüino para opción con imagen (P5, Sobresaliente)
+    │   ├── aguila.png               # Imagen PNG Águila para opción con imagen (P5, Sobresaliente)
+    │   ├── loro.png                 # Imagen PNG Loro para opción con imagen (P5, Sobresaliente)
+    │   ├── colibri.png              # Imagen PNG Colibrí para opción con imagen (P5, Sobresaliente)
     │   └── logo_android.png         # Logo Android proporcionado en la asignatura
     ├── layout/
     │   ├── activity_main.xml        # Layout principal con los 5 contenedores de preguntas

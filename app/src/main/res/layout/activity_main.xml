@@ -5,7 +5,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_nature_gradient"
+    android:background="@drawable/bg_jungle_theme"
     android:padding="16dp"
     tools:context=".MainActivity">
 
@@ -179,7 +179,7 @@
                     android:layout_height="140dp"
                     android:layout_marginBottom="12dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/img_guepardo"
+                    android:src="@drawable/guepardo"
                     android:contentDescription="Imagen animal veloz" />
 
                 <RadioGroup
@@ -341,7 +341,7 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:background="@null"
-                            android:src="@drawable/img_pinguino"
+                            android:src="@drawable/pinguino"
                             android:scaleType="fitCenter"
                             android:contentDescription="@string/p5_opcion_a" />
 
@@ -375,7 +375,7 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:background="@null"
-                            android:src="@drawable/img_aguila"
+                            android:src="@drawable/aguila"
                             android:scaleType="fitCenter"
                             android:contentDescription="@string/p5_opcion_b" />
 
@@ -409,7 +409,7 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:background="@null"
-                            android:src="@drawable/img_loro"
+                            android:src="@drawable/loro"
                             android:scaleType="fitCenter"
                             android:contentDescription="@string/p5_opcion_c" />
 
@@ -443,7 +443,7 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:background="@null"
-                            android:src="@drawable/img_colibri"
+                            android:src="@drawable/colibri"
                             android:scaleType="fitCenter"
                             android:contentDescription="@string/p5_opcion_d" />
 

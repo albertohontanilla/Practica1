@@ -1,0 +1,69 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="360dp"
+    android:height="640dp"
+    android:viewportWidth="360"
+    android:viewportHeight="640">
+
+    <!-- Fondo degradado verde selvático profundo -->
+    <path
+        android:pathData="M0,0 H360 V640 H0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:angle="270"
+                android:startX="180"
+                android:startY="0"
+                android:endX="180"
+                android:endY="640"
+                android:type="linear">
+                <item android:color="#1B5E20" android:offset="0.0" />
+                <item android:color="#133D17" android:offset="0.5" />
+                <item android:color="#081E0B" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Hojas tropicales decorativas esquina superior izquierda -->
+    <path
+        android:fillColor="#0D3512"
+        android:pathData="M0,0 C30,40 60,60 90,50 C70,75 40,85 0,80 Z" />
+    <path
+        android:fillColor="#1B4D21"
+        android:pathData="M0,20 C40,50 80,45 110,20 C85,60 50,75 0,60 Z" />
+    <path
+        android:fillColor="#255D2B"
+        android:pathData="M0,0 C50,20 80,10 120,0 C80,30 40,40 0,30 Z" />
+
+    <!-- Hojas tropicales decorativas esquina superior derecha -->
+    <path
+        android:fillColor="#0D3512"
+        android:pathData="M360,0 C330,40 300,60 270,50 C290,75 320,85 360,80 Z" />
+    <path
+        android:fillColor="#1B4D21"
+        android:pathData="M360,20 C320,50 280,45 250,20 C275,60 310,75 360,60 Z" />
+    <path
+        android:fillColor="#255D2B"
+        android:pathData="M360,0 C310,20 280,10 240,0 C280,30 320,40 360,30 Z" />
+
+    <!-- Hojas tropicales decorativas esquina inferior izquierda -->
+    <path
+        android:fillColor="#09240C"
+        android:pathData="M0,640 C35,600 65,580 95,590 C75,565 45,555 0,560 Z" />
+    <path
+        android:fillColor="#103314"
+        android:pathData="M0,620 C45,590 85,595 115,620 C90,580 55,565 0,580 Z" />
+    <path
+        android:fillColor="#18431E"
+        android:pathData="M0,640 C55,620 85,630 125,640 C85,610 45,600 0,610 Z" />
+
+    <!-- Hojas tropicales decorativas esquina inferior derecha -->
+    <path
+        android:fillColor="#09240C"
+        android:pathData="M360,640 C325,600 295,580 265,590 C285,565 315,555 360,560 Z" />
+    <path
+        android:fillColor="#103314"
+        android:pathData="M360,620 C315,590 275,595 245,620 C270,580 305,565 360,580 Z" />
+    <path
+        android:fillColor="#18431E"
+        android:pathData="M360,640 C305,620 275,630 235,640 C275,610 315,600 360,610 Z" />
+</vector>
