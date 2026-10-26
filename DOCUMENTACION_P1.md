@@ -1,4 +1,4 @@
-# Práctica 1: Juego con Interfaces de Usuario (Animal Quiz)
+# Práctica 1: Juego con Interfaces de Usuario (Quiz Cervecero)
 **Asignatura:** Laboratorio de Dispositivos Móviles  
 **Universidad:** Universidad Rey Juan Carlos (URJC)  
 **Profesora:** Liliana Patricia Santacruz Valencia  
@@ -7,7 +7,7 @@
 
 ## 1. Resumen de la Aplicación
 
-La aplicación desarrollada es un juego interactivo de tipo **Quiz sobre el Reino Animal** que cumple con **todos los requisitos obligatorios y opcionales para la máxima calificación (10.00 / 10.00 - Sobresaliente)** establecidos en el enunciado y la rúbrica oficial.
+La aplicación desarrollada es un juego interactivo de tipo **Quiz sobre marcas de cerveza**, con preguntas sobre marcas españolas y europeas y una ronda visual de reconocimiento de logotipos.
 
 La aplicación consta de **5 preguntas** con diferentes componentes visuales y controles de usuario, un sistema de puntuación en vivo con penalizaciones y bonificaciones, control de errores con bifurcación de partida (continuar o reiniciar), y una segunda Activity para visualizar los resultados finales con animaciones y opción de jugar nuevas tandas.
 
@@ -18,11 +18,11 @@ La aplicación consta de **5 preguntas** con diferentes componentes visuales y c
 | Criterio de la Rúbrica | Puntuación | Estado | Implementación |
 | :--- | :---: | :---: | :--- |
 | **1.1 Activities y Puntuaciones** | **1,50 pts** | **100% Completo** | El juego principal se ejecuta en `MainActivity` y la puntuación se envía mediante un `Intent` explícito con extras a `ResultadoActivity`, donde se visualiza el resumen y se ofrece el botón de comenzar una nueva tanda. Además, cuenta con transiciones animadas entre Activities (`ActivityOptions.makeSceneTransitionAnimation`). |
-| **1.2 Preguntas de texto con opciones de texto** | **1,25 pts** | **100% Completo** | **Pregunta 1:** "¿Cuál de los siguientes animales es un marsupial?" con 4 opciones de texto mediante `RadioGroup` y `RadioButton` (Koala, Tigre, Lobo, Vaca). |
-| **1.3 Pregunta sobre imagen con opciones de texto** | **1,25 pts** | **100% Completo** | **Pregunta 2:** "¿Cuál es el animal terrestre más rápido del mundo?" que incluye un componente `ImageView` con ilustración vectorial (`img_guepardo`) y opciones en texto mediante `RadioGroup` (León, Guepardo, Gacela, Liebre). |
-| **2. Varios controles (RadioButton, ListView, Spinner, etc.)** | **1,50 pts** | **100% Completo** | Se integran múltiples controles a lo largo del flujo:<br>• `RadioGroup` + `RadioButton` (P1 y P2)<br>• `ListView` con `ArrayAdapter` y `setOnItemClickListener` (P3: "¿Qué ave es conocida por su canto melodioso?")<br>• `Spinner` desplegable con `ArrayAdapter` (P4: "¿Cuál es el mamífero más grande del mundo?")<br>• `ImageButton` interactivo (P5)<br>• `MaterialButton`, `CardView`, `TextView` y `LottieAnimationView`. |
-| **Sobresaliente (Hasta 10,00 pts)**: Preguntas con opciones de imágenes | **Criterio 10/10** | **100% Completo** | **Pregunta 5:** "¿Cuál de las siguientes aves no tiene la capacidad de volar?" con **4 opciones que muestran imágenes** interactivas (`ImageButton` y contenedores con `img_pinguino`, `img_aguila`, `img_loro`, `img_colibri`) y selección visual con borde activo. |
-| **Calidad del código y diseño** | **1,50 pts** | **100% Completo** | Arquitectura Java limpia, separación estricta de recursos en XML (`strings.xml`, `colors.xml`, `themes.xml`, `drawables`), diseño temático de selva con tarjetas pergamino responsivas. |
+| **1.2 Preguntas de texto con opciones de texto** | **1,25 pts** | **100% Completo** | **Pregunta 1:** identifica Cruzcampo por su origen sevillano, mediante un `RadioGroup`. |
+| **1.3 Pregunta sobre imagen con opciones de texto** | **1,25 pts** | **100% Completo** | **Pregunta 2:** reconoce Heineken por su estrella roja, con una imagen de dos jarras de cerveza y opciones en un `RadioGroup`. |
+| **2. Varios controles (RadioButton, ListView, Spinner, etc.)** | **1,50 pts** | **100% Completo** | Se integran `RadioGroup` + `RadioButton` (P1 y P2), `ListView` (P3, grupo Damm), `Spinner` (P4, origen de Pilsner Urquell), `ImageButton` (P5), `MaterialButton`, `CardView`, `TextView` y `LottieAnimationView`. |
+| **Preguntas con opciones de imágenes** | **Criterio 10/10** | **100% Completo** | **Pregunta 5:** identifica Estrella Galicia entre los logotipos PNG de Mahou, Estrella Galicia, Cruzcampo y San Miguel. |
+| **Calidad del código y diseño** | **1,50 pts** | **100% Completo** | Arquitectura Java limpia, recursos separados en XML y diseño temático en tonos ámbar y cobre. |
 
 ---
 
@@ -70,9 +70,8 @@ app/src/main/
 │   └── ResultadoActivity.java       # Controlador de Resultados (recepción de extras, reinicio, veredicto)
 └── res/
     ├── drawable/
-    │   ├── bg_jungle_theme.xml      # Fondo vectorial de selva tropical con hojas decorativas (Figura 1)
-    │   ├── bg_nature_gradient.xml   # Fondo degradado de estilo selva / naturaleza
-    │   ├── bg_parchment_card.xml    # Contenedor estilo pergamino / tarjeta redondeada
+    │   ├── bg_brewery_theme.xml     # Fondo vectorial en tonos cálidos
+    │   ├── bg_parchment_card.xml    # Tarjeta redondeada para las preguntas
     │   ├── bg_badge_score.xml       # Badge verde para puntuación
     │   ├── bg_badge_progress.xml    # Badge naranja para progreso
     │   ├── bg_option_card.xml       # Estado normal de las opciones
@@ -83,12 +82,13 @@ app/src/main/
     │   ├── ic_cross.xml             # Icono de fallo
     │   ├── ic_refresh.xml           # Icono de reinicio
     │   ├── ic_trophy.xml            # Icono de trofeo
-    │   ├── guepardo.png             # Imagen PNG del animal más rápido (P2, Diapos 5-9)
-    │   ├── pinguino.png             # Imagen PNG Pingüino para opción con imagen (P5, Sobresaliente)
-    │   ├── aguila.png               # Imagen PNG Águila para opción con imagen (P5, Sobresaliente)
-    │   ├── loro.png                 # Imagen PNG Loro para opción con imagen (P5, Sobresaliente)
-    │   ├── colibri.png              # Imagen PNG Colibrí para opción con imagen (P5, Sobresaliente)
     │   └── logo_android.png         # Logo Android proporcionado en la asignatura
+    ├── drawable-nodpi/
+    │   ├── jarra_cerveza.png        # Jarras de cerveza (P2)
+    │   ├── logo_mahou.png           # Logotipo para P5, opción A
+    │   ├── logo_estrella_galicia.png # Logotipo para P5, opción B
+    │   ├── logo_cruzcampo.png       # Logotipo para P5, opción C
+    │   └── logo_san_miguel.png      # Logotipo para P5, opción D
     ├── layout/
     │   ├── activity_main.xml        # Layout principal con los 5 contenedores de preguntas
     │   ├── activity_resultado.xml   # Layout de pantalla de fin de juego y puntuaciones
@@ -106,15 +106,15 @@ app/src/main/
 El enunciado exige un vídeo de máximo 3 minutos donde aparezcan los integrantes (rostro en cámara) explicando la app en ejecución y el código.
 
 ### Minuto 0:00 - 0:45 | Presentación y Demostración en Ejecución
-- Presentarse ante la cámara: "Hola, soy [Nombre y Apellidos]. Esta es la entrega de la Práctica 1 de Laboratorio de Dispositivos Móviles: Quiz sobre el Reino Animal".
+- Presentarse ante la cámara: "Hola, soy [Nombre y Apellidos]. Esta es la entrega de la Práctica 1: Quiz de Marcas de Cerveza".
 - Mostrar la app en pantalla:
-  - **Pregunta 1:** Pregunta de texto con `RadioGroup` ("¿Cuál es un marsupial?"). Seleccionar "Koala", pulsar comprobar -> Se observa el Toast, el banner verde y la suma de +3 puntos.
-  - **Pregunta 2:** Pregunta con `ImageView` ("¿Cuál es el más rápido?") y opciones de texto -> Seleccionar una errónea a propósito para mostrar la penalización de -2 puntos y el diálogo que permite "Continuar" o "Empezar de nuevo". Elegir "Continuar".
+  - **Pregunta 1:** Identificar Cruzcampo por su origen sevillano.
+  - **Pregunta 2:** Identificar Heineken por su estrella roja. Se puede elegir una opción errónea para mostrar la penalización de -2 puntos y el diálogo para continuar o reiniciar.
 
 ### Minuto 0:45 - 1:45 | Controles Variados y Requisito Sobresaliente
-  - **Pregunta 3:** Mostrar el control `ListView` ("¿Qué ave tiene canto melodioso?"). Pulsar sobre "Ruiseñor", verificar el `OnItemClickListener` y avanzar.
-  - **Pregunta 4:** Mostrar el control `Spinner` desplegable ("¿Cuál es el mamífero más grande?"). Desplegar la lista, elegir "Ballena azul" y comprobar.
-  - **Pregunta 5 (Sobresaliente):** Enseñar la pregunta donde **las 4 opciones son imágenes** (`ImageButton`). Seleccionar el pingüino y pulsar en ver resultados.
+  - **Pregunta 3:** Usar el `ListView` para encontrar la marca del grupo Damm.
+  - **Pregunta 4:** Usar el `Spinner` para elegir el país de origen de Pilsner Urquell.
+  - **Pregunta 5:** Reconocer el logotipo de Estrella Galicia entre cuatro imágenes y abrir los resultados.
 
 ### Minuto 1:45 - 2:30 | Segunda Activity y Transición Animada
   - Mostrar la animación de transición al abrir `ResultadoActivity`.

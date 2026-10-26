@@ -5,7 +5,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_jungle_theme"
+    android:background="@color/bg_screen"
     android:padding="16dp"
     tools:context=".MainActivity">
 
@@ -97,7 +97,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:lineSpacingExtra="4dp"
-                tools:text="¿Cuál de los siguientes animales es un marsupial?" />
+                tools:text="¿Qué marca española nació en Sevilla en 1904?" />
 
             <View
                 android:layout_width="match_parent"
@@ -179,8 +179,8 @@
                     android:layout_height="140dp"
                     android:layout_marginBottom="12dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/guepardo"
-                    android:contentDescription="Imagen animal veloz" />
+                    android:src="@drawable/jarra_cerveza"
+                    android:contentDescription="@string/brand_image_description" />
 
                 <RadioGroup
                     android:id="@+id/radioGroupQ2"
@@ -247,7 +247,7 @@
                     android:layout_marginBottom="8dp"
                     android:textColor="@color/text_muted"
                     android:textSize="13sp"
-                    android:text="Selecciona una opción de la lista:" />
+                    android:text="@string/list_selection_prompt" />
 
                 <ListView
                     android:id="@+id/listViewQ3"
@@ -271,7 +271,7 @@
                     android:layout_marginBottom="8dp"
                     android:textColor="@color/text_muted"
                     android:textSize="13sp"
-                    android:text="Despliega el menú para seleccionar la respuesta:" />
+                    android:text="@string/spinner_selection_prompt" />
 
                 <Spinner
                     android:id="@+id/spinnerQ4"
@@ -293,7 +293,7 @@
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:visibility="gone"
-                    tools:text="Seleccionado: Ballena azul" />
+                    tools:text="Seleccionado: República Checa" />
             </LinearLayout>
 
             <!-- PREGUNTA 5: Opciones de respuestas que muestran IMÁGENES (Sobresaliente) -->
@@ -310,7 +310,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/text_muted"
                     android:textSize="13sp"
-                    android:text="Toca la imagen del animal correcto:" />
+                    android:text="@string/image_selection_prompt" />
 
                 <!-- Cuadrícula 2x2 de opciones con imágenes -->
                 <GridLayout
@@ -322,7 +322,7 @@
                     android:alignmentMode="alignMargins"
                     android:useDefaultMargins="true">
 
-                    <!-- Opción 1: Pingüino -->
+                    <!-- Opción A: Mahou -->
                     <LinearLayout
                         android:id="@+id/cardImgOption1"
                         android:layout_width="0dp"
@@ -338,25 +338,15 @@
 
                         <ImageButton
                             android:id="@+id/ibQ5Option1"
-                            android:layout_width="72dp"
+                            android:layout_width="112dp"
                             android:layout_height="72dp"
                             android:background="@null"
-                            android:src="@drawable/pinguino"
+                            android:src="@drawable/logo_mahou"
                             android:scaleType="fitCenter"
-                            android:contentDescription="@string/p5_opcion_a" />
-
-                        <TextView
-                            android:id="@+id/tvImgOption1Label"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/p5_opcion_a"
-                            android:textColor="@color/text_body"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:contentDescription="@string/logo_mahou_description" />
                     </LinearLayout>
 
-                    <!-- Opción 2: Águila -->
+                    <!-- Opción B: Estrella Galicia -->
                     <LinearLayout
                         android:id="@+id/cardImgOption2"
                         android:layout_width="0dp"
@@ -372,25 +362,15 @@
 
                         <ImageButton
                             android:id="@+id/ibQ5Option2"
-                            android:layout_width="72dp"
+                            android:layout_width="112dp"
                             android:layout_height="72dp"
                             android:background="@null"
-                            android:src="@drawable/aguila"
+                            android:src="@drawable/logo_estrella_galicia"
                             android:scaleType="fitCenter"
-                            android:contentDescription="@string/p5_opcion_b" />
-
-                        <TextView
-                            android:id="@+id/tvImgOption2Label"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/p5_opcion_b"
-                            android:textColor="@color/text_body"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:contentDescription="@string/logo_estrella_galicia_description" />
                     </LinearLayout>
 
-                    <!-- Opción 3: Loro -->
+                    <!-- Opción C: Cruzcampo -->
                     <LinearLayout
                         android:id="@+id/cardImgOption3"
                         android:layout_width="0dp"
@@ -406,25 +386,15 @@
 
                         <ImageButton
                             android:id="@+id/ibQ5Option3"
-                            android:layout_width="72dp"
+                            android:layout_width="112dp"
                             android:layout_height="72dp"
                             android:background="@null"
-                            android:src="@drawable/loro"
+                            android:src="@drawable/logo_cruzcampo"
                             android:scaleType="fitCenter"
-                            android:contentDescription="@string/p5_opcion_c" />
-
-                        <TextView
-                            android:id="@+id/tvImgOption3Label"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/p5_opcion_c"
-                            android:textColor="@color/text_body"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:contentDescription="@string/logo_cruzcampo_description" />
                     </LinearLayout>
 
-                    <!-- Opción 4: Colibrí -->
+                    <!-- Opción D: San Miguel -->
                     <LinearLayout
                         android:id="@+id/cardImgOption4"
                         android:layout_width="0dp"
@@ -440,22 +410,12 @@
 
                         <ImageButton
                             android:id="@+id/ibQ5Option4"
-                            android:layout_width="72dp"
+                            android:layout_width="112dp"
                             android:layout_height="72dp"
                             android:background="@null"
-                            android:src="@drawable/colibri"
+                            android:src="@drawable/logo_san_miguel"
                             android:scaleType="fitCenter"
-                            android:contentDescription="@string/p5_opcion_d" />
-
-                        <TextView
-                            android:id="@+id/tvImgOption4Label"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/p5_opcion_d"
-                            android:textColor="@color/text_body"
-                            android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:contentDescription="@string/logo_san_miguel_description" />
                     </LinearLayout>
                 </GridLayout>
             </LinearLayout>

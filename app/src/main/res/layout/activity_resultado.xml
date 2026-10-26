@@ -5,7 +5,7 @@
     android:id="@+id/layoutResultadoRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_jungle_theme"
+    android:background="@color/bg_screen"
     android:padding="20dp"
     tools:context=".ResultadoActivity">
 
@@ -59,7 +59,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PUNTUACIÓN OBTENIDA"
+                android:text="@string/score_earned_label"
                 android:textColor="@color/text_muted"
                 android:textSize="13sp"
                 android:letterSpacing="0.08"
@@ -146,7 +146,7 @@
                 android:textColor="@color/primary_dark"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                tools:text="¡Excelente! ¡Eres todo un experto en fauna salvaje!" />
+                tools:text="¡Excelente! Dominas las marcas cerveceras." />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

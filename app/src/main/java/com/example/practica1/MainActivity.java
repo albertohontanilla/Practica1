@@ -38,12 +38,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private int seleccionActual = -1; // Índice de la opción seleccionada (0..3)
 
     // Respuestas correctas para cada pregunta (0 = A, 1 = B, 2 = C, 3 = D)
-    // P1: Marsupial -> Koala (0)
-    // P2: Animal terrestre más rápido -> Guepardo (1)
-    // P3: Ave con canto melodioso -> Ruiseñor (2)
-    // P4: Mamífero más grande -> Ballena azul (1)
-    // P5: Ave no voladora -> Pingüino (0)
-    private final int[] RESPUESTAS_CORRECTAS = {0, 1, 2, 1, 0};
+    // P1: Marca fundada en Sevilla -> Cruzcampo (1)
+    // P2: Marca neerlandesa de la estrella roja -> Heineken (0)
+    // P3: Marca del grupo Damm -> Estrella Damm (0)
+    // P4: Origen de Pilsner Urquell -> República Checa (1)
+    // P5: Marca fundada en A Coruña en 1906 -> Estrella Galicia (1)
+    private final int[] RESPUESTAS_CORRECTAS = {1, 0, 0, 1, 1};
 
     // Vistas principales
     private TextView tvQuestionProgress;
@@ -176,10 +176,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         // Configuración de ListView para P3
         ArrayList<String> opcionesP3 = new ArrayList<>();
-        opcionesP3.add(getString(R.string.p3_opcion_a)); // Cuervo
-        opcionesP3.add(getString(R.string.p3_opcion_b)); // Gorrión
-        opcionesP3.add(getString(R.string.p3_opcion_c)); // Ruiseñor
-        opcionesP3.add(getString(R.string.p3_opcion_d)); // Tucán
+        opcionesP3.add(getString(R.string.p3_opcion_a));
+        opcionesP3.add(getString(R.string.p3_opcion_b));
+        opcionesP3.add(getString(R.string.p3_opcion_c));
+        opcionesP3.add(getString(R.string.p3_opcion_d));
 
         ArrayAdapter<String> adapterP3 = new ArrayAdapter<>(this, R.layout.item_quiz_option, R.id.tvOptionText, opcionesP3);
         listViewQ3.setAdapter(adapterP3);
@@ -187,11 +187,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         // Configuración de Spinner para P4
         ArrayList<String> opcionesP4 = new ArrayList<>();
-        opcionesP4.add("-- Toca para desplegar y seleccionar --"); // Posición 0: Placeholder
-        opcionesP4.add(getString(R.string.p4_opcion_a)); // Elefante africano (Posición 1 -> Opción 0)
-        opcionesP4.add(getString(R.string.p4_opcion_b)); // Ballena azul (Posición 2 -> Opción 1 - Correcta)
-        opcionesP4.add(getString(R.string.p4_opcion_c)); // Jirafa (Posición 3 -> Opción 2)
-        opcionesP4.add(getString(R.string.p4_opcion_d)); // Rinoceronte blanco (Posición 4 -> Opción 3)
+        opcionesP4.add(getString(R.string.p4_spinner_prompt)); // Posición 0: Placeholder
+        opcionesP4.add(getString(R.string.p4_opcion_a)); // Posición 1 -> Opción 0
+        opcionesP4.add(getString(R.string.p4_opcion_b)); // Posición 2 -> Opción 1 - Correcta
+        opcionesP4.add(getString(R.string.p4_opcion_c)); // Posición 3 -> Opción 2
+        opcionesP4.add(getString(R.string.p4_opcion_d)); // Posición 4 -> Opción 3
 
         ArrayAdapter<String> adapterP4 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, opcionesP4);
         spinnerQ4.setAdapter(adapterP4);

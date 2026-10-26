@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Quiz del Reino Animal</string>
-    <string name="title_quiz">Animal Quiz</string>
+    <string name="app_name">Quiz Cervecero</string>
+    <string name="title_quiz">Reto Cervecero</string>
     
     <!-- Marcadores -->
     <string name="puntos_format">Puntos: %1$d</string>
@@ -20,44 +20,49 @@
 
     <!-- Pregunta 1 (Texto + RadioButtons) -->
     <string name="p1_titulo">Pregunta 1</string>
-    <string name="p1_enunciado">¿Cuál de los siguientes animales es un marsupial?</string>
-    <string name="p1_opcion_a">Koala</string>
-    <string name="p1_opcion_b">Tigre</string>
-    <string name="p1_opcion_c">Lobo</string>
-    <string name="p1_opcion_d">Vaca</string>
+    <string name="p1_enunciado">¿Qué marca española nació en Sevilla en 1904?</string>
+    <string name="p1_opcion_a">Mahou</string>
+    <string name="p1_opcion_b">Cruzcampo</string>
+    <string name="p1_opcion_c">San Miguel</string>
+    <string name="p1_opcion_d">Estrella Galicia</string>
 
     <!-- Pregunta 2 (Imagen + Opciones de texto) -->
     <string name="p2_titulo">Pregunta 2</string>
-    <string name="p2_enunciado">¿Cuál es el animal terrestre más rápido del mundo?</string>
-    <string name="p2_opcion_a">León</string>
-    <string name="p2_opcion_b">Guepardo</string>
-    <string name="p2_opcion_c">Gacela</string>
-    <string name="p2_opcion_d">Liebre</string>
+    <string name="p2_enunciado">¿Qué marca neerlandesa es conocida por la estrella roja de su etiqueta?</string>
+    <string name="p2_opcion_a">Heineken</string>
+    <string name="p2_opcion_b">Guinness</string>
+    <string name="p2_opcion_c">Carlsberg</string>
+    <string name="p2_opcion_d">Budweiser</string>
 
     <!-- Pregunta 3 (Texto + ListView) -->
     <string name="p3_titulo">Pregunta 3</string>
-    <string name="p3_enunciado">¿Qué ave es conocida popularmente por su canto melodioso?</string>
-    <string name="p3_opcion_a">Cuervo</string>
-    <string name="p3_opcion_b">Gorrión</string>
-    <string name="p3_opcion_c">Ruiseñor</string>
-    <string name="p3_opcion_d">Tucán</string>
+    <string name="p3_enunciado">¿Cuál de estas marcas pertenece al grupo cervecero Damm?</string>
+    <string name="p3_opcion_a">Estrella Damm</string>
+    <string name="p3_opcion_b">Mahou</string>
+    <string name="p3_opcion_c">Alhambra</string>
+    <string name="p3_opcion_d">Ambar</string>
 
     <!-- Pregunta 4 (Texto + Spinner) -->
     <string name="p4_titulo">Pregunta 4</string>
-    <string name="p4_enunciado">¿Cuál es el mamífero más grande del planeta Tierra?</string>
+    <string name="p4_enunciado">Pilsner Urquell, una de las marcas más conocidas de cerveza pilsner, nació en…</string>
     <string name="p4_spinner_prompt">Selecciona una opción</string>
-    <string name="p4_opcion_a">Elefante africano</string>
-    <string name="p4_opcion_b">Ballena azul</string>
-    <string name="p4_opcion_c">Jirafa</string>
-    <string name="p4_opcion_d">Rinoceronte blanco</string>
+    <string name="p4_opcion_a">Alemania</string>
+    <string name="p4_opcion_b">República Checa</string>
+    <string name="p4_opcion_c">Bélgica</string>
+    <string name="p4_opcion_d">Irlanda</string>
 
     <!-- Pregunta 5 (Texto + Opciones con imágenes) -->
     <string name="p5_titulo">Pregunta 5</string>
-    <string name="p5_enunciado">¿Cuál de las siguientes aves no tiene la capacidad de volar?</string>
-    <string name="p5_opcion_a">Pingüino</string>
-    <string name="p5_opcion_b">Águila imperial</string>
-    <string name="p5_opcion_c">Guacamayo</string>
-    <string name="p5_opcion_d">Colibrí</string>
+    <string name="p5_enunciado">¿Qué logotipo corresponde a una marca fundada en A Coruña en 1906?</string>
+    <string name="logo_mahou_description">Logotipo, opción A</string>
+    <string name="logo_estrella_galicia_description">Logotipo, opción B</string>
+    <string name="logo_cruzcampo_description">Logotipo, opción C</string>
+    <string name="logo_san_miguel_description">Logotipo, opción D</string>
+    <string name="brand_image_description">Dos jarras de cerveza</string>
+    <string name="list_selection_prompt">Selecciona una marca de la lista:</string>
+    <string name="spinner_selection_prompt">Despliega el menú para elegir el país:</string>
+    <string name="image_selection_prompt">Toca el logotipo correcto:</string>
+    <string name="score_earned_label">PUNTUACIÓN OBTENIDA</string>
 
     <!-- Mensajes de feedback -->
     <string name="msg_acierto">¡Respuesta correcta! (+3 puntos)</string>
@@ -71,8 +76,8 @@
     <string name="resultado_puntos_format">%1$d puntos</string>
     <string name="resultado_aciertos_format">Aciertos: %1$d / %2$d (+%3$d pts)</string>
     <string name="resultado_fallos_format">Fallos: %1$d / %2$d (-%3$d pts)</string>
-    <string name="resultado_excelente">¡Excelente! ¡Eres todo un experto en fauna salvaje!</string>
-    <string name="resultado_notable">¡Muy bien jugado! Tienes un gran conocimiento del reino animal.</string>
+    <string name="resultado_excelente">¡Excelente! Dominas las marcas cerveceras.</string>
+    <string name="resultado_notable">¡Muy bien jugado! Tienes buenos conocimientos sobre marcas.</string>
     <string name="resultado_aprobado">¡Buen intento! Has superado el reto.</string>
     <string name="resultado_suspenso">¡Ánimo! Puedes intentarlo de nuevo para mejorar tu récord.</string>
 </resources>
