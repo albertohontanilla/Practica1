@@ -101,31 +101,4 @@ app/src/main/
 
 ---
 
-## 5. Guion Sugerido para el Vídeo Explicativo (Máx. 3 minutos)
 
-El enunciado exige un vídeo de máximo 3 minutos donde aparezcan los integrantes (rostro en cámara) explicando la app en ejecución y el código.
-
-### Minuto 0:00 - 0:45 | Presentación y Demostración en Ejecución
-- Presentarse ante la cámara: "Hola, soy [Nombre y Apellidos]. Esta es la entrega de la Práctica 1: Quiz de Marcas de Cerveza".
-- Mostrar la app en pantalla:
-  - **Pregunta 1:** Identificar Cruzcampo por su origen sevillano.
-  - **Pregunta 2:** Identificar Heineken por su estrella roja. Se puede elegir una opción errónea para mostrar la penalización de -2 puntos y el diálogo para continuar o reiniciar.
-
-### Minuto 0:45 - 1:45 | Controles Variados y Requisito Sobresaliente
-  - **Pregunta 3:** Usar el `ListView` para encontrar la marca del grupo Damm.
-  - **Pregunta 4:** Usar el `Spinner` para elegir el país de origen de Pilsner Urquell.
-  - **Pregunta 5:** Reconocer el logotipo de Estrella Galicia entre cuatro imágenes y abrir los resultados.
-
-### Minuto 1:45 - 2:30 | Segunda Activity y Transición Animada
-  - Mostrar la animación de transición al abrir `ResultadoActivity`.
-  - Explicar la pantalla final:
-    - Animación gráfica Lottie.
-    - Puntuación calculada exacta con aciertos y fallos.
-    - Mensaje motivador personalizado.
-    - Pulsar el botón **"Jugar de nuevo"** para demostrar que reinicia una nueva tanda con 0 puntos.
-
-### Minuto 2:30 - 3:00 | Breve repaso del código y despedida
-  - Mostrar en Android Studio:
-    - `MainActivity.java`: La gestión de preguntas, listeners de cada control (`RadioGroup`, `ListView`, `Spinner`, `ImageButton`), cálculo de puntos y paso de parámetros mediante `Intent`.
-    - `themes.xml` y `ActivityOptions`: Las transiciones entre pantallas.
-    - Despedida formal.

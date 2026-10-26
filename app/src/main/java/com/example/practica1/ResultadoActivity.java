@@ -77,7 +77,7 @@ public class ResultadoActivity extends AppCompatActivity {
     }
 
     private void configurarListeners() {
-        // Opción de comenzar una nueva tanda del juego (Requisito 1.1)
+        // Opción de comenzar una nueva tanda del juego 
         btnJugarDeNuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

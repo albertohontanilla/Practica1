@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int correcta = RESPUESTAS_CORRECTAS[preguntaActual - 1];
 
         if (seleccionActual == correcta) {
-            // Acierto (+3 puntos)
+            
             puntos += 3;
             aciertos++;
             mostrarFeedback(true, getString(R.string.msg_acierto));
@@ -353,7 +353,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             btnAction.setText(preguntaActual == TOTAL_PREGUNTAS ? "Ver Resultados" : getString(R.string.btn_siguiente));
             btnAction.setBackgroundColor(getResources().getColor(R.color.primary));
         } else {
-            // Fallo (-2 puntos)
+            
             puntos -= 2;
             fallos++;
             mostrarFeedback(false, getString(R.string.msg_fallo));
@@ -362,11 +362,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             deshabilitarControlesPregunta();
             actualizarMarcadores();
 
-            // Requisito del enunciado:
-            // "Tras un fallo:
-            //  a. Se resta dos puntos
-            //  b. Se indica mediante un mensaje que ha habido un error.
-            //  c. Se puede continuar o empezar de nuevo el juego."
             mostrarDialogoFallo();
         }
     }
