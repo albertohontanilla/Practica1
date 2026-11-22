@@ -21,7 +21,7 @@ La aplicación consta de **5 preguntas** con diferentes componentes visuales y c
 | **1.2 Preguntas de texto con opciones de texto** | **1,25 pts** | **100% Completo** | **Pregunta 1:** identifica Cruzcampo por su origen sevillano, mediante un `RadioGroup`. |
 | **1.3 Pregunta sobre imagen con opciones de texto** | **1,25 pts** | **100% Completo** | **Pregunta 2:** reconoce Heineken por su estrella roja, con ilustración y opciones en un `RadioGroup`. |
 | **2. Varios controles (RadioButton, ListView, Spinner, etc.)** | **1,50 pts** | **100% Completo** | Se integran `RadioGroup` + `RadioButton` (P1 y P2), `ListView` (P3, grupo Damm), `Spinner` (P4, origen de Pilsner Urquell), `ImageButton` (P5), `MaterialButton`, `CardView`, `TextView` y `LottieAnimationView`. |
-| **Preguntas con opciones de imágenes** | **Criterio 10/10** | **100% Completo** | **Pregunta 5:** identifica Estrella Galicia entre cuatro opciones visuales (Mahou, Estrella Galicia, Cruzcampo y San Miguel). Las imágenes oficiales pueden añadirse como PNG en `drawable-nodpi`. |
+| **Preguntas con opciones de imágenes** | **Criterio 10/10** | **100% Completo** | **Pregunta 5:** identifica Estrella Galicia entre cuatro opciones visuales (Mahou, Estrella Galicia, Cruzcampo y San Miguel). Las imágenes están en `drawable-nodpi`. |
 | **Calidad del código y diseño** | **1,50 pts** | **100% Completo** | Arquitectura Java limpia, recursos separados en XML y diseño temático en tonos ámbar y cobre. |
 
 ---
@@ -83,9 +83,9 @@ app/src/main/
     │   ├── ic_refresh.xml           # Icono de reinicio
     │   └── ic_trophy.xml            # Icono de trofeo
     ├── drawable-nodpi/
-    │   ├── jarra_cerveza.png        # Jarras de cerveza (P2)
+    │   ├── jarra_cerveza.webp       # Jarras de cerveza (P2)
     │   ├── logo_mahou.png           # Logotipo para P5, opción A
-    │   ├── logo_estrella_galicia.png # Logotipo para P5, opción B
+    │   ├── logo_estrella_galicia.webp # Logotipo para P5, opción B
     │   ├── logo_cruzcampo.png       # Logotipo para P5, opción C
     │   └── logo_san_miguel.png      # Logotipo para P5, opción D
     ├── layout/

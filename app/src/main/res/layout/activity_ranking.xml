@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_brewery_theme"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".RankingActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="8dp"
+        android:text="@string/ranking_subtitulo"
+        android:textColor="@color/accent_light"
+        android:textSize="14sp" />
+
+    <ListView
+        android:id="@+id/listRanking"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:dividerHeight="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp" />
+
+    <!-- Se muestra cuando la tabla de partidas está vacía -->
+    <TextView
+        android:id="@+id/tvRankingVacio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="32dp"
+        android:text="@string/ranking_vacio"
+        android:textColor="@color/accent_light"
+        android:textSize="16sp"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_ranking"
+        android:icon="@drawable/ic_trophy"
+        android:title="@string/menu_ranking"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_manual"
+        android:icon="@drawable/ic_manual"
+        android:title="@string/menu_manual"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_musica"
+        android:checkable="true"
+        android:title="@string/menu_musica"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_efectos"
+        android:checkable="true"
+        android:title="@string/menu_efectos"
+        app:showAsAction="never" />
+</menu>

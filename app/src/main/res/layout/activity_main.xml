@@ -1,119 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_brewery_theme"
-    android:padding="16dp"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!-- BARRA SUPERIOR: Contador y Puntuación -->
-    <LinearLayout
-        android:id="@+id/topBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    <include layout="@layout/toolbar" />
 
-        <TextView
-            android:id="@+id/tvQuestionProgress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_badge_progress"
-            android:paddingStart="14dp"
-            android:paddingTop="6dp"
-            android:paddingEnd="14dp"
-            android:paddingBottom="6dp"
-            android:text="@string/pregunta_counter_format"
-            android:textColor="@color/white"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            tools:text="Pregunta 1 / 5" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/tvScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_badge_score"
-            android:paddingStart="14dp"
-            android:paddingTop="6dp"
-            android:paddingEnd="14dp"
-            android:paddingBottom="6dp"
-            android:text="@string/puntos_format"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            tools:text="Puntos: 0" />
-    </LinearLayout>
-
-    <!-- TARJETA CENTRAL TIPO PERGAMINO -->
-    <ScrollView
-        android:id="@+id/scrollViewContent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
-        app:layout_constraintBottom_toTopOf="@id/bottomBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_weight="1"
+        android:padding="16dp">
 
+        <!-- BARRA SUPERIOR: Contador y Puntuación -->
         <LinearLayout
-            android:id="@+id/cardContainer"
+            android:id="@+id/topBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_parchment_card"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <!-- Enunciado de la pregunta -->
-            <TextView
-                android:id="@+id/tvQuestionTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_dark"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:text="Pregunta 1" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <TextView
-                android:id="@+id/tvQuestionText"
-                android:layout_width="match_parent"
+                android:id="@+id/tvQuestionProgress"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:textColor="@color/text_title"
-                android:textSize="20sp"
+                android:background="@drawable/bg_badge_progress"
+                android:paddingStart="14dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="6dp"
+                android:text="@string/pregunta_counter_format"
+                android:textColor="@color/white"
+                android:textSize="13sp"
                 android:textStyle="bold"
-                android:lineSpacingExtra="4dp"
-                tools:text="¿Qué marca española nació en Sevilla en 1904?" />
+                tools:text="Pregunta 1 / 5" />
 
             <View
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
-                android:background="#D7CCC8" />
+                android:layout_weight="1" />
 
-            <!-- PREGUNTA 1: RadioGroup + RadioButtons (Texto) -->
+            <TextView
+                android:id="@+id/tvScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_score"
+                android:paddingStart="14dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="6dp"
+                android:text="@string/puntos_format"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Puntos: 0" />
+        </LinearLayout>
+
+        <!-- TARJETA CENTRAL TIPO PERGAMINO -->
+        <ScrollView
+            android:id="@+id/scrollViewContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintBottom_toTopOf="@id/bottomBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
             <LinearLayout
-                android:id="@+id/layoutQuestion1"
+                android:id="@+id/cardContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_parchment_card"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:padding="20dp">
 
+                <!-- Enunciado de la pregunta -->
+                <TextView
+                    android:id="@+id/tvQuestionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="Pregunta 1" />
+
+                <TextView
+                    android:id="@+id/tvQuestionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/text_title"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="4dp"
+                    tools:text="¿Qué marca española nació en Sevilla en 1904?" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/divider" />
+
+                <!-- PREGUNTA 1: RadioGroup + RadioButtons (Texto) -->
                 <RadioGroup
                     android:id="@+id/radioGroupQ1"
                     android:layout_width="match_parent"
@@ -126,7 +128,7 @@
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/bg_option_card"
                         android:padding="12dp"
-                        android:text="@string/p1_opcion_a"
+                        tools:text="Opción A"
                         android:textColor="@color/text_body"
                         android:textSize="16sp" />
 
@@ -137,7 +139,7 @@
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/bg_option_card"
                         android:padding="12dp"
-                        android:text="@string/p1_opcion_b"
+                        tools:text="Opción B"
                         android:textColor="@color/text_body"
                         android:textSize="16sp" />
 
@@ -148,7 +150,7 @@
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/bg_option_card"
                         android:padding="12dp"
-                        android:text="@string/p1_opcion_c"
+                        tools:text="Opción C"
                         android:textColor="@color/text_body"
                         android:textSize="16sp" />
 
@@ -159,344 +161,346 @@
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/bg_option_card"
                         android:padding="12dp"
-                        android:text="@string/p1_opcion_d"
+                        tools:text="Opción D"
                         android:textColor="@color/text_body"
                         android:textSize="16sp" />
                 </RadioGroup>
-            </LinearLayout>
 
-            <!-- PREGUNTA 2: Imagen + Opciones de texto (RadioGroup) -->
-            <LinearLayout
-                android:id="@+id/layoutQuestion2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <ImageView
-                    android:id="@+id/ivQuestion2Image"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_marginBottom="12dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/jarra_cerveza"
-                    android:contentDescription="@string/brand_image_description" />
-
-                <RadioGroup
-                    android:id="@+id/radioGroupQ2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/rbQ2OptionA"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:background="@drawable/bg_option_card"
-                        android:padding="12dp"
-                        android:text="@string/p2_opcion_a"
-                        android:textColor="@color/text_body"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/rbQ2OptionB"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:background="@drawable/bg_option_card"
-                        android:padding="12dp"
-                        android:text="@string/p2_opcion_b"
-                        android:textColor="@color/text_body"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/rbQ2OptionC"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:background="@drawable/bg_option_card"
-                        android:padding="12dp"
-                        android:text="@string/p2_opcion_c"
-                        android:textColor="@color/text_body"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/rbQ2OptionD"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:background="@drawable/bg_option_card"
-                        android:padding="12dp"
-                        android:text="@string/p2_opcion_d"
-                        android:textColor="@color/text_body"
-                        android:textSize="16sp" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <!-- PREGUNTA 3: ListView con Opciones -->
-            <LinearLayout
-                android:id="@+id/layoutQuestion3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <TextView
+                <!-- PREGUNTA 2: Imagen + Opciones de texto (RadioGroup) -->
+                <LinearLayout
+                    android:id="@+id/layoutQuestion2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:textColor="@color/text_muted"
-                    android:textSize="13sp"
-                    android:text="@string/list_selection_prompt" />
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-                <ListView
-                    android:id="@+id/listViewQ3"
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:divider="@null"
-                    android:dividerHeight="6dp" />
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/ivQuestion2Image"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginBottom="12dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/jarra_cerveza"
+                        android:contentDescription="@string/pregunta_imagen_description" />
 
-            <!-- PREGUNTA 4: Spinner con Opciones -->
-            <LinearLayout
-                android:id="@+id/layoutQuestion4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
+                    <RadioGroup
+                        android:id="@+id/radioGroupQ2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                <TextView
+                        <RadioButton
+                            android:id="@+id/rbQ2OptionA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_option_card"
+                            android:padding="12dp"
+                            tools:text="Opción A"
+                            android:textColor="@color/text_body"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbQ2OptionB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_option_card"
+                            android:padding="12dp"
+                            tools:text="Opción B"
+                            android:textColor="@color/text_body"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbQ2OptionC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_option_card"
+                            android:padding="12dp"
+                            tools:text="Opción C"
+                            android:textColor="@color/text_body"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbQ2OptionD"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_option_card"
+                            android:padding="12dp"
+                            tools:text="Opción D"
+                            android:textColor="@color/text_body"
+                            android:textSize="16sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!-- PREGUNTA 3: ListView con Opciones -->
+                <LinearLayout
+                    android:id="@+id/layoutQuestion3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:textColor="@color/text_muted"
-                    android:textSize="13sp"
-                    android:text="@string/spinner_selection_prompt" />
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-                <Spinner
-                    android:id="@+id/spinnerQ4"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:background="@drawable/bg_option_card"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:layout_marginBottom="16dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/text_muted"
+                        android:textSize="13sp"
+                        android:text="@string/list_selection_prompt" />
 
-                <!-- Vista previa de la opción seleccionada -->
-                <TextView
-                    android:id="@+id/tvSelectedSpinnerOption"
+                    <ListView
+                        android:id="@+id/listViewQ3"
+                        tools:ignore="NestedScrolling"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:divider="@null"
+                        android:dividerHeight="6dp" />
+                </LinearLayout>
+
+                <!-- PREGUNTA 4: Spinner con Opciones -->
+                <LinearLayout
+                    android:id="@+id/layoutQuestion4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/text_muted"
+                        android:textSize="13sp"
+                        android:text="@string/spinner_selection_prompt" />
+
+                    <Spinner
+                        android:id="@+id/spinnerQ4"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_option_card"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Vista previa de la opción seleccionada -->
+                    <TextView
+                        android:id="@+id/tvSelectedSpinnerOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_option_selected"
+                        android:padding="12dp"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        tools:text="Seleccionado: República Checa" />
+                </LinearLayout>
+
+                <!-- PREGUNTA 5: Opciones de respuestas que muestran IMÁGENES (Sobresaliente) -->
+                <LinearLayout
+                    android:id="@+id/layoutQuestion5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/text_muted"
+                        android:textSize="13sp"
+                        android:text="@string/image_selection_prompt" />
+
+                    <!-- Cuadrícula 2x2 de opciones con imágenes -->
+                    <GridLayout
+                        android:id="@+id/gridImagesQ5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:rowCount="2"
+                        android:alignmentMode="alignMargins"
+                        android:useDefaultMargins="true">
+
+                        <!-- Opción A -->
+                        <LinearLayout
+                            android:id="@+id/cardImgOption1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/bg_option_card"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageButton
+                                android:id="@+id/ibQ5Option1"
+                                android:layout_width="112dp"
+                                android:layout_height="72dp"
+                                android:background="@null"
+                                tools:src="@drawable/logo_mahou"
+                                android:scaleType="fitCenter"
+                                android:contentDescription="@string/logo_opcion_a_description" />
+                        </LinearLayout>
+
+                        <!-- Opción B -->
+                        <LinearLayout
+                            android:id="@+id/cardImgOption2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/bg_option_card"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageButton
+                                android:id="@+id/ibQ5Option2"
+                                android:layout_width="112dp"
+                                android:layout_height="72dp"
+                                android:background="@null"
+                                tools:src="@drawable/logo_estrella_galicia"
+                                android:scaleType="fitCenter"
+                                android:contentDescription="@string/logo_opcion_b_description" />
+                        </LinearLayout>
+
+                        <!-- Opción C -->
+                        <LinearLayout
+                            android:id="@+id/cardImgOption3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/bg_option_card"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageButton
+                                android:id="@+id/ibQ5Option3"
+                                android:layout_width="112dp"
+                                android:layout_height="72dp"
+                                android:background="@null"
+                                tools:src="@drawable/logo_cruzcampo"
+                                android:scaleType="fitCenter"
+                                android:contentDescription="@string/logo_opcion_c_description" />
+                        </LinearLayout>
+
+                        <!-- Opción D -->
+                        <LinearLayout
+                            android:id="@+id/cardImgOption4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/bg_option_card"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageButton
+                                android:id="@+id/ibQ5Option4"
+                                android:layout_width="112dp"
+                                android:layout_height="72dp"
+                                android:background="@null"
+                                tools:src="@drawable/logo_san_miguel"
+                                android:scaleType="fitCenter"
+                                android:contentDescription="@string/logo_opcion_d_description" />
+                        </LinearLayout>
+                    </GridLayout>
+                </LinearLayout>
+
+                <!-- FEEDBACK EN TIEMPO REAL -->
+                <LinearLayout
+                    android:id="@+id/layoutFeedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
                     android:background="@drawable/bg_option_selected"
-                    android:padding="12dp"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    tools:text="Seleccionado: República Checa" />
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivFeedbackIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_check"
+                        android:contentDescription="@string/feedback_icon_description" />
+
+                    <TextView
+                        android:id="@+id/tvFeedbackMessage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_dark"
+                        tools:text="¡Respuesta correcta! (+3 puntos)" />
+                </LinearLayout>
+
             </LinearLayout>
+        </ScrollView>
 
-            <!-- PREGUNTA 5: Opciones de respuestas que muestran IMÁGENES (Sobresaliente) -->
-            <LinearLayout
-                android:id="@+id/layoutQuestion5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
+        <!-- BARRA INFERIOR DE ACCIONES -->
+        <LinearLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@color/text_muted"
-                    android:textSize="13sp"
-                    android:text="@string/image_selection_prompt" />
+            <!-- Botón Reiniciar tanda -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRestart"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="@string/btn_reiniciar"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/error"
+                app:icon="@drawable/ic_refresh"
+                app:iconTint="@color/white"
+                app:cornerRadius="12dp"
+                android:textSize="13sp" />
 
-                <!-- Cuadrícula 2x2 de opciones con imágenes -->
-                <GridLayout
-                    android:id="@+id/gridImagesQ5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:columnCount="2"
-                    android:rowCount="2"
-                    android:alignmentMode="alignMargins"
-                    android:useDefaultMargins="true">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
 
-                    <!-- Opción A: Mahou -->
-                    <LinearLayout
-                        android:id="@+id/cardImgOption1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/bg_option_card"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageButton
-                            android:id="@+id/ibQ5Option1"
-                            android:layout_width="112dp"
-                            android:layout_height="72dp"
-                            android:background="@null"
-                            android:src="@drawable/logo_mahou"
-                            android:scaleType="fitCenter"
-                            android:contentDescription="@string/logo_mahou_description" />
-                    </LinearLayout>
-
-                    <!-- Opción B: Estrella Galicia -->
-                    <LinearLayout
-                        android:id="@+id/cardImgOption2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/bg_option_card"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageButton
-                            android:id="@+id/ibQ5Option2"
-                            android:layout_width="112dp"
-                            android:layout_height="72dp"
-                            android:background="@null"
-                            android:src="@drawable/logo_estrella_galicia"
-                            android:scaleType="fitCenter"
-                            android:contentDescription="@string/logo_estrella_galicia_description" />
-                    </LinearLayout>
-
-                    <!-- Opción C: Cruzcampo -->
-                    <LinearLayout
-                        android:id="@+id/cardImgOption3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/bg_option_card"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageButton
-                            android:id="@+id/ibQ5Option3"
-                            android:layout_width="112dp"
-                            android:layout_height="72dp"
-                            android:background="@null"
-                            android:src="@drawable/logo_cruzcampo"
-                            android:scaleType="fitCenter"
-                            android:contentDescription="@string/logo_cruzcampo_description" />
-                    </LinearLayout>
-
-                    <!-- Opción D: San Miguel -->
-                    <LinearLayout
-                        android:id="@+id/cardImgOption4"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/bg_option_card"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageButton
-                            android:id="@+id/ibQ5Option4"
-                            android:layout_width="112dp"
-                            android:layout_height="72dp"
-                            android:background="@null"
-                            android:src="@drawable/logo_san_miguel"
-                            android:scaleType="fitCenter"
-                            android:contentDescription="@string/logo_san_miguel_description" />
-                    </LinearLayout>
-                </GridLayout>
-            </LinearLayout>
-
-            <!-- FEEDBACK EN TIEMPO REAL -->
-            <LinearLayout
-                android:id="@+id/layoutFeedback"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="10dp"
-                android:background="@drawable/bg_option_selected"
-                android:visibility="gone">
-
-                <ImageView
-                    android:id="@+id/ivFeedbackIcon"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_check"
-                    android:contentDescription="Resultado" />
-
-                <TextView
-                    android:id="@+id/tvFeedbackMessage"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary_dark"
-                    tools:text="¡Respuesta correcta! (+3 puntos)" />
-            </LinearLayout>
-
+            <!-- Botón Acción: Comprobar / Siguiente -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="@string/btn_comprobar"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/accent"
+                app:icon="@drawable/ic_arrow_forward"
+                app:iconGravity="end"
+                app:iconTint="@color/white"
+                app:cornerRadius="12dp"
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </ScrollView>
 
-    <!-- BARRA INFERIOR DE ACCIONES -->
-    <LinearLayout
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Botón Reiniciar tanda -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRestart"
-            android:layout_width="wrap_content"
-            android:layout_height="52dp"
-            android:text="Reiniciar"
-            android:textColor="@color/white"
-            android:backgroundTint="#C62828"
-            app:icon="@drawable/ic_refresh"
-            app:iconTint="@color/white"
-            app:cornerRadius="12dp"
-            android:textSize="13sp" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        <!-- Botón Acción: Comprobar / Siguiente -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAction"
-            android:layout_width="wrap_content"
-            android:layout_height="52dp"
-            android:text="@string/btn_comprobar"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/accent"
-            app:icon="@drawable/ic_arrow_forward"
-            app:iconGravity="end"
-            app:iconTint="@color/white"
-            app:cornerRadius="12dp"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_brewery_theme"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ManualActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_parchment_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/manual_objetivo_titulo"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualTitulo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/manual_objetivo"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualCuerpo" />
+
+            <TextView
+                android:id="@+id/tvManualBanco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualCuerpo"
+                android:textStyle="italic"
+                tools:text="Banco actual: 20 preguntas almacenadas." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/manual_como_jugar_titulo"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualTitulo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/manual_como_jugar"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualCuerpo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/manual_tipos_titulo"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualTitulo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/manual_tipos"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualCuerpo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/manual_puntuacion_titulo"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualTitulo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/manual_puntuacion"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualCuerpo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/manual_ranking_titulo"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualTitulo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/manual_ranking"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualCuerpo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/manual_sonido_titulo"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualTitulo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/manual_sonido"
+                android:textAppearance="@style/TextAppearance.Practica1.ManualCuerpo" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

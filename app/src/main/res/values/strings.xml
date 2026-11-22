@@ -1,83 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
     <string name="app_name">Quiz Cervecero</string>
-    <string name="title_quiz">Reto Cervecero</string>
-    
+
     <!-- Marcadores -->
     <string name="puntos_format">Puntos: %1$d</string>
     <string name="pregunta_counter_format">Pregunta %1$d / %2$d</string>
-    <string name="score_label">Puntuación: </string>
-    
+    <string name="pregunta_titulo_format">Pregunta %1$d</string>
+
     <!-- Botones de navegación y acción -->
     <string name="btn_siguiente">Siguiente</string>
     <string name="btn_comprobar">Comprobar</string>
-    <string name="btn_reiniciar">Reiniciar Juego</string>
+    <string name="btn_ver_resultados">Ver resultados</string>
+    <string name="btn_reiniciar">Reiniciar</string>
     <string name="btn_jugar_de_nuevo">Jugar de nuevo</string>
     <string name="btn_continuar">Continuar</string>
     <string name="btn_empezar_nuevo">Empezar de nuevo</string>
-    <string name="btn_confirmar_seleccion">Confirmar respuesta</string>
     <string name="btn_salir">Salir</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_confirmar_reinicio">Sí, reiniciar</string>
+    <string name="btn_guardar_ranking">Guardar en el ranking</string>
+    <string name="btn_ver_ranking">Ver ranking</string>
+    <string name="btn_borrar">Borrar</string>
 
-    <!-- Pregunta 1 (Texto + RadioButtons) -->
-    <string name="p1_titulo">Pregunta 1</string>
-    <string name="p1_enunciado">¿Qué marca española nació en Sevilla en 1904?</string>
-    <string name="p1_opcion_a">Mahou</string>
-    <string name="p1_opcion_b">Cruzcampo</string>
-    <string name="p1_opcion_c">San Miguel</string>
-    <string name="p1_opcion_d">Estrella Galicia</string>
-
-    <!-- Pregunta 2 (Imagen + Opciones de texto) -->
-    <string name="p2_titulo">Pregunta 2</string>
-    <string name="p2_enunciado">¿Qué marca neerlandesa es conocida por la estrella roja de su etiqueta?</string>
-    <string name="p2_opcion_a">Heineken</string>
-    <string name="p2_opcion_b">Guinness</string>
-    <string name="p2_opcion_c">Carlsberg</string>
-    <string name="p2_opcion_d">Budweiser</string>
-
-    <!-- Pregunta 3 (Texto + ListView) -->
-    <string name="p3_titulo">Pregunta 3</string>
-    <string name="p3_enunciado">¿Cuál de estas marcas pertenece al grupo cervecero Damm?</string>
-    <string name="p3_opcion_a">Estrella Damm</string>
-    <string name="p3_opcion_b">Mahou</string>
-    <string name="p3_opcion_c">Alhambra</string>
-    <string name="p3_opcion_d">Ambar</string>
-
-    <!-- Pregunta 4 (Texto + Spinner) -->
-    <string name="p4_titulo">Pregunta 4</string>
-    <string name="p4_enunciado">Pilsner Urquell, una de las marcas más conocidas de cerveza pilsner, nació en…</string>
-    <string name="p4_spinner_prompt">Selecciona una opción</string>
-    <string name="p4_opcion_a">Alemania</string>
-    <string name="p4_opcion_b">República Checa</string>
-    <string name="p4_opcion_c">Bélgica</string>
-    <string name="p4_opcion_d">Irlanda</string>
-
-    <!-- Pregunta 5 (Texto + Opciones con imágenes) -->
-    <string name="p5_titulo">Pregunta 5</string>
-    <string name="p5_enunciado">¿Qué logotipo corresponde a una marca fundada en A Coruña en 1906?</string>
-    <string name="logo_mahou_description">Logotipo, opción A</string>
-    <string name="logo_estrella_galicia_description">Logotipo, opción B</string>
-    <string name="logo_cruzcampo_description">Logotipo, opción C</string>
-    <string name="logo_san_miguel_description">Logotipo, opción D</string>
-    <string name="brand_image_description">Ilustración de cervezas de distintas marcas</string>
-    <string name="list_selection_prompt">Selecciona una marca de la lista:</string>
-    <string name="spinner_selection_prompt">Despliega el menú para elegir el país:</string>
+    <!-- Controles de las preguntas -->
+    <string name="spinner_placeholder">Selecciona una opción</string>
+    <string name="spinner_seleccionado_format">Seleccionado: %1$s</string>
+    <string name="list_selection_prompt">Selecciona una opción de la lista:</string>
+    <string name="spinner_selection_prompt">Despliega el menú para elegir la respuesta:</string>
     <string name="image_selection_prompt">Toca el logotipo correcto:</string>
-    <string name="score_earned_label">PUNTUACIÓN OBTENIDA</string>
+    <string name="logo_opcion_a_description">Logotipo, opción A</string>
+    <string name="logo_opcion_b_description">Logotipo, opción B</string>
+    <string name="logo_opcion_c_description">Logotipo, opción C</string>
+    <string name="logo_opcion_d_description">Logotipo, opción D</string>
+    <string name="pregunta_imagen_description">Imagen de apoyo de la pregunta</string>
+    <string name="feedback_icon_description">Indicador de respuesta correcta o incorrecta</string>
 
     <!-- Mensajes de feedback -->
     <string name="msg_acierto">¡Respuesta correcta! (+3 puntos)</string>
     <string name="msg_fallo">¡Respuesta incorrecta! (-2 puntos)</string>
     <string name="msg_debe_seleccionar">Por favor, selecciona una opción antes de continuar</string>
+    <string name="msg_juego_reiniciado">Juego reiniciado. ¡Buena suerte!</string>
+    <string name="msg_sin_preguntas">No hay preguntas disponibles en la base de datos</string>
     <string name="dialog_fallo_titulo">¡Has fallado!</string>
     <string name="dialog_fallo_mensaje">Se te han restado 2 puntos (-2).\n\n¿Deseas continuar con la siguiente pregunta o empezar el juego desde el principio?</string>
+    <string name="dialog_reinicio_titulo">Reiniciar quiz</string>
+    <string name="dialog_reinicio_mensaje">¿Seguro que quieres reiniciar la partida? Se perderá el progreso acumulado y se elegirán preguntas nuevas.</string>
+
+    <!-- Menú de la Toolbar -->
+    <string name="menu_ranking">Ranking</string>
+    <string name="menu_manual">Manual de usuario</string>
+    <string name="menu_musica">Música de fondo</string>
+    <string name="menu_efectos">Efectos de sonido</string>
+    <string name="menu_borrar_historial">Borrar historial</string>
 
     <!-- Pantalla de resultados -->
     <string name="resultado_titulo">¡Fin del Quiz!</string>
-    <string name="resultado_puntos_format">%1$d puntos</string>
+    <string name="score_earned_label">PUNTUACIÓN OBTENIDA</string>
+    <string name="resultado_puntos_format">%1$d pts</string>
+    <string name="resultado_puntos_positivo_format">+%1$d pts</string>
     <string name="resultado_aciertos_format">Aciertos: %1$d / %2$d (+%3$d pts)</string>
     <string name="resultado_fallos_format">Fallos: %1$d / %2$d (-%3$d pts)</string>
     <string name="resultado_excelente">¡Excelente! Dominas las marcas cerveceras.</string>
     <string name="resultado_notable">¡Muy bien jugado! Tienes buenos conocimientos sobre marcas.</string>
     <string name="resultado_aprobado">¡Buen intento! Has superado el reto.</string>
     <string name="resultado_suspenso">¡Ánimo! Puedes intentarlo de nuevo para mejorar tu récord.</string>
+    <string name="hint_nombre_jugador">Tu nombre</string>
+    <string name="jugador_anonimo">Anónimo</string>
+    <string name="msg_puntuacion_guardada">Puntuación guardada en el ranking</string>
+
+    <!-- Ranking -->
+    <string name="ranking_titulo">Ranking</string>
+    <string name="ranking_subtitulo">Las 20 mejores partidas guardadas en la base de datos</string>
+    <string name="ranking_vacio">Todavía no hay partidas guardadas.\n¡Juega una partida y guarda tu puntuación!</string>
+    <string name="ranking_posicion_format">%1$d</string>
+    <string name="ranking_detalle_format">Aciertos: %1$d · Fallos: %2$d · %3$s</string>
+    <string name="dialog_borrar_titulo">Borrar historial</string>
+    <string name="dialog_borrar_mensaje">Se eliminarán todas las partidas guardadas. Esta acción no se puede deshacer.</string>
+    <string name="msg_historial_borrado">Historial borrado</string>
+
+    <!-- Manual de usuario -->
+    <string name="manual_titulo">Manual de usuario</string>
+    <string name="manual_objetivo_titulo">1. Objetivo del juego</string>
+    <string name="manual_objetivo">Quiz Cervecero pone a prueba tus conocimientos sobre marcas de cerveza españolas e internacionales. Cada partida consta de 5 preguntas elegidas al azar de un banco de preguntas guardado en una base de datos, por lo que cada partida es distinta.</string>
+    <string name="manual_banco_format">Preguntas almacenadas en la base de datos: %1$d</string>
+    <string name="manual_como_jugar_titulo">2. Cómo jugar</string>
+    <string name="manual_como_jugar">• Lee el enunciado y elige una respuesta.\n• Pulsa «Comprobar» para validarla.\n• Si aciertas, pulsa «Siguiente» para pasar a la siguiente pregunta.\n• Si fallas, podrás elegir entre continuar o empezar de nuevo.\n• El botón «Reiniciar» empieza una partida nueva en cualquier momento.</string>
+    <string name="manual_tipos_titulo">3. Tipos de pregunta</string>
+    <string name="manual_tipos">• Pregunta 1: opciones de texto (botones de selección).\n• Pregunta 2: imagen con opciones de texto.\n• Pregunta 3: lista de opciones; toca la que creas correcta.\n• Pregunta 4: menú desplegable.\n• Pregunta 5: elige el logotipo correcto entre cuatro imágenes.</string>
+    <string name="manual_puntuacion_titulo">4. Puntuación</string>
+    <string name="manual_puntuacion">• Cada acierto suma 3 puntos.\n• Cada fallo resta 2 puntos.\n• La puntuación máxima es de 15 puntos.\n• Al terminar verás el resumen de aciertos y fallos.</string>
+    <string name="manual_ranking_titulo">5. Ranking</string>
+    <string name="manual_ranking">Al final de la partida puedes escribir tu nombre y guardar la puntuación. El ranking (icono del trofeo) muestra las mejores partidas ordenadas por puntos. Desde el ranking también puedes borrar el historial.</string>
+    <string name="manual_sonido_titulo">6. Música y sonidos</string>
+    <string name="manual_sonido">Durante la partida suena música de fondo y cada respuesta tiene un efecto de sonido de acierto o de fallo. Al terminar se reproduce una fanfarria de victoria o un sonido de derrota. Desde el menú de la barra superior (⋮) puedes activar o desactivar por separado la música y los efectos.</string>
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <style name="Base.Theme.Practica1" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>
@@ -7,7 +7,7 @@
         <item name="colorSecondary">@color/accent</item>
         <item name="colorSecondaryVariant">@color/accent_dark</item>
         <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor">@color/bg_screen</item>
+        <item name="android:statusBarColor">@color/toolbar_bg</item>
         <item name="android:windowLightStatusBar">false</item>
 
         <!-- Transición entre activities según las diapositivas de clase -->
@@ -18,4 +18,28 @@
     </style>
 
     <style name="Theme.Practica1" parent="Base.Theme.Practica1" />
+
+    <!-- Toolbar de la app: fondo personalizado, logo y texto/iconos en blanco -->
+    <style name="Widget.Practica1.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/toolbar_bg</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="subtitleTextColor">@color/accent_light</item>
+        <item name="logo">@drawable/ic_logo_toolbar</item>
+        <item name="titleMarginStart">12dp</item>
+    </style>
+
+    <!-- Textos del manual de usuario -->
+    <style name="TextAppearance.Practica1.ManualTitulo" parent="">
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Practica1.ManualCuerpo" parent="">
+        <item name="android:textColor">@color/text_body</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
 </resources>

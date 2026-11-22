@@ -2,36 +2,24 @@
 <resources>
     <color name="primary">#A65F00</color>
     <color name="primary_dark">#603600</color>
-    <color name="primary_light">#E0A33A</color>
     <color name="accent">#E38B16</color>
     <color name="accent_dark">#A95700</color>
     <color name="accent_light">#FFE0A3</color>
 
-    <color name="bg_screen">#321B10</color>
-    <color name="bg_screen_gradient_start">#5D3015</color>
-    <color name="bg_screen_gradient_end">#21130E</color>
+    <!-- Color de fondo de la Toolbar (requisito de diseño P2) -->
+    <color name="toolbar_bg">#8C1D18</color>
+    <color name="ic_launcher_background">#5D3015</color>
 
     <color name="parchment_bg">#FFF8E8</color>
-    <color name="parchment_border">#D6B77A</color>
-    <color name="parchment_card">#FAF0D8</color>
-
-    <color name="option_normal">#FFFCF4</color>
-    <color name="option_selected">#FFE6AF</color>
-    <color name="option_border">#D8C8A8</color>
-    <color name="option_border_selected">#A65F00</color>
+    <color name="divider">#D7CCC8</color>
 
     <color name="text_title">#382315</color>
     <color name="text_body">#493827</color>
-    <color name="text_light">#ECEFF1</color>
     <color name="text_muted">#806A54</color>
 
-    <color name="success">#2E7D32</color>
-    <color name="success_bg">#E8F5E9</color>
     <color name="error">#C62828</color>
     <color name="error_bg">#FFEBEE</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="translucent_black">#80000000</color>
-    <color name="translucent_white">#40FFFFFF</color>
 </resources>
