@@ -71,11 +71,6 @@ app/src/main/
 └── res/
     ├── drawable/
     │   ├── bg_brewery_theme.xml     # Fondo vectorial en tonos cálidos
-    │   ├── beer_brand_lineup.xml    # Ilustración de cervezas (P2)
-    │   ├── logo_mahou.xml           # Placeholder, sustituible por logo_mahou.png
-    │   ├── logo_estrella_galicia.xml # Placeholder, sustituible por logo_estrella_galicia.png
-    │   ├── logo_cruzcampo.xml       # Placeholder, sustituible por logo_cruzcampo.png
-    │   ├── logo_san_miguel.xml      # Placeholder, sustituible por logo_san_miguel.png
     │   ├── bg_parchment_card.xml    # Tarjeta redondeada para las preguntas
     │   ├── bg_badge_score.xml       # Badge verde para puntuación
     │   ├── bg_badge_progress.xml    # Badge naranja para progreso
@@ -86,8 +81,13 @@ app/src/main/
     │   ├── ic_check.xml             # Icono de acierto
     │   ├── ic_cross.xml             # Icono de fallo
     │   ├── ic_refresh.xml           # Icono de reinicio
-    │   ├── ic_trophy.xml            # Icono de trofeo
-    │   └── logo_android.png         # Logo Android proporcionado en la asignatura
+    │   └── ic_trophy.xml            # Icono de trofeo
+    ├── drawable-nodpi/
+    │   ├── jarra_cerveza.png        # Jarras de cerveza (P2)
+    │   ├── logo_mahou.png           # Logotipo para P5, opción A
+    │   ├── logo_estrella_galicia.png # Logotipo para P5, opción B
+    │   ├── logo_cruzcampo.png       # Logotipo para P5, opción C
+    │   └── logo_san_miguel.png      # Logotipo para P5, opción D
     ├── layout/
     │   ├── activity_main.xml        # Layout principal con los 5 contenedores de preguntas
     │   ├── activity_resultado.xml   # Layout de pantalla de fin de juego y puntuaciones
@@ -97,11 +97,6 @@ app/src/main/
         ├── strings.xml              # Textos externalizados para preguntas, opciones y mensajes
         └── themes.xml               # Tema con animaciones de transición entre actividades
 ```
-
-Para usar los logotipos oficiales en la Pregunta 5, guarda los PNG en
-`app/src/main/res/drawable-nodpi/` con estos nombres: `logo_mahou.png`,
-`logo_estrella_galicia.png`, `logo_cruzcampo.png` y `logo_san_miguel.png`.
-Los vectores de reserva se muestran mientras no se añadan esas imágenes.
 
 ---
 

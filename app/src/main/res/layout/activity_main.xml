@@ -179,7 +179,7 @@
                     android:layout_height="140dp"
                     android:layout_marginBottom="12dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/beer_brand_lineup"
+                    android:src="@drawable/jarra_cerveza"
                     android:contentDescription="@string/brand_image_description" />
 
                 <RadioGroup
