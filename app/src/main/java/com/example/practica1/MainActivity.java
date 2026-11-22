@@ -520,10 +520,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void deshabilitarControlesPregunta() {
         switch (preguntas[preguntaActual - 1].getTipo()) {
             case Pregunta.TIPO_RADIO:
-                habilitarBotones(opcionesQ1, false);
+                deshabilitarBotones(opcionesQ1);
                 break;
             case Pregunta.TIPO_IMAGEN:
-                habilitarBotones(opcionesQ2, false);
+                deshabilitarBotones(opcionesQ2);
                 break;
             case Pregunta.TIPO_LISTA:
                 listViewQ3.setEnabled(false);
@@ -542,9 +542,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
-    private void habilitarBotones(RadioButton[] botones, boolean habilitar) {
+    private void deshabilitarBotones(RadioButton[] botones) {
         for (RadioButton boton : botones) {
-            boton.setEnabled(habilitar);
+            boton.setEnabled(false);
         }
     }
 
@@ -586,6 +586,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Transición animada de salida/entrada entre Activities
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
         startActivity(intent, options.toBundle());
+
+        // La partida ya ha terminado: se cierra para que "Atrás" no permita volver
+        // a la última pregunta y abrir de nuevo los resultados (y guardarlos dos veces).
+        finish();
     }
 
     private void reiniciarJuego() {

@@ -22,7 +22,7 @@ import java.util.List;
 public class QuizDbHelper extends SQLiteOpenHelper {
 
     private static final String NOMBRE_BD = "quiz_cervecero.db";
-    private static final int VERSION_BD = 1;
+    private static final int VERSION_BD = 2; // v2: pregunta de la jarra corregida
 
     // Tabla de preguntas
     private static final String TABLA_PREGUNTAS = "preguntas";
@@ -175,8 +175,8 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "El lúpulo", "La cebada", "El trigo", "El arroz", 0, null);
 
         // Tipo 2: imagen + RadioButtons
-        insertar(db, Pregunta.TIPO_IMAGEN, "¿Qué marca neerlandesa es conocida por la estrella roja de su etiqueta?",
-                "Heineken", "Guinness", "Carlsberg", "Budweiser", 0, ImagenesQuiz.JARRA);
+        insertar(db, Pregunta.TIPO_IMAGEN, "¿Cómo se llaman los recipientes de cristal con asa que aparecen en la imagen?",
+                "Cañas", "Jarras", "Tubos", "Copas", 1, ImagenesQuiz.JARRA);
         insertar(db, Pregunta.TIPO_IMAGEN, "¿En qué ciudad se fundó la marca de este logotipo?",
                 "Madrid", "Granada", "Sevilla", "A Coruña", 3, ImagenesQuiz.LOGO_ESTRELLA_GALICIA);
         insertar(db, Pregunta.TIPO_IMAGEN, "¿A qué grupo cervecero pertenece la marca de este logotipo?",
