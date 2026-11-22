@@ -7,7 +7,8 @@
         <item name="colorSecondary">@color/accent</item>
         <item name="colorSecondaryVariant">@color/accent_dark</item>
         <item name="colorOnSecondary">@color/black</item>
-        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:statusBarColor">@color/bg_screen</item>
+        <item name="android:windowLightStatusBar">false</item>
 
         <!-- Transición entre activities según las diapositivas de clase -->
         <item name="android:windowActivityTransitions">true</item>
